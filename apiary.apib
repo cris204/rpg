@@ -5,7 +5,7 @@ HOST: http://polls.apiblueprint.org/
 
 
 
-## Characters [/Characters/{?unlock_code}]
+## Characters [/id/Characters/{?unlock_code}]
 
 ### List All Characters [GET]
 
@@ -63,7 +63,7 @@ HOST: http://polls.apiblueprint.org/
 
 + Response 200 (application/json)
 
-## Stats [/Characters/{?character_Code}/{?skill}]
+## Stats [/id/Characters/{?character_Code,skill}]
 
 ### Stats [POST]
 
@@ -95,3 +95,72 @@ HOST: http://polls.apiblueprint.org/
                 "Special Defense":50
         
         ]
+        
+## Team [/id/profile/team]
+
+### MyTeam [GET]
+
++ Response 200 (application/json)   
+
+        {
+            "My Team":
+            [   
+                {
+                  "First champ": "Grougal",
+                  "Second champ": "Nefarian"
+                }
+            ]
+        }
+        
+### ChangeTeam [POST]
+
++ Request (application/json)   
+
+        {
+            "change":[
+            
+                 "First champ": "Grougal",
+                 "Second champ": "Samantha"
+            
+            ]
+            
+        }
+        
++ Response 200 (application/json)
+
+## Match [/match/result]
+
+### MatchResult [POST]
+
++ Request (application/json)
+
+        {
+            "Player 1":"Win",
+            "Player 2":"lose"
+        }
+        
++ Response 200 (application/json)
+
+### Scores [GET]
+
++ Request (application/json)
+
+           {
+                "Scores":
+                [
+                    "Score player 1":200,
+                    "Score player 2":100
+                ]
+            
+           }
+
++ Response 200 (application/json)
+
+        {
+             "New Scores":
+                [
+                    "Score player 1":250,
+                    "Score player 2":50
+                ]
+        
+        }
