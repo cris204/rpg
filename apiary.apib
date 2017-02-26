@@ -1,0 +1,83 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# RPG Multijugador
+
+
+
+## Characters [/Characters]
+
+### List All Characters [GET]
+
++ Response 200 (application/json)
+
+        [
+            {   
+            
+                "Name":"Grougal",
+                "Type":"Fire Warrior",
+                "Life":200,
+                "Attack":25,
+                "Special Attack":50,
+                "Defense":20,
+                "Special Defense":50
+            
+            
+            },
+            {
+                "Name":"Samantha",
+                "Type":"Grass archer",
+                "Life":200,
+                "Attack":25,
+                "Special Attack":50,
+                "Defense":20,
+                "Special Defense":50
+            },
+            {
+                "Name":"Nefarian",
+                "Type":"water Necromancer",
+                "Life":200,
+                "Attack":25,
+                "Special Attack":50,
+                "Defense":20,
+                "Special Defense":50
+            }
+            
+        ]
+
+## Unlock [/Characters/{Unlock}]
+
+### Unlock [POST]
+
+
++ Request (application/json)
+
+        {
+            "question": "which one do you prefer?",
+            "choices": [
+                "Grougal",
+                "Samantha",
+                "Nefarian"
+                
+            
+        }
+
++ Response 200 (application/json)
+
+## Stats [/Characters/{Name}/{Stats}]
+
+### Stats [POST]
+
+
++ Request (application/json)
+
+        {
+                "Question":"what stat do you want upgrade?",
+                "Life":200,
+                "Attack":25,
+                "Special Attack":50,
+                "Defense":20,
+                "Special Defense":50
+        }
+        
++ Response 200 (application/json)
