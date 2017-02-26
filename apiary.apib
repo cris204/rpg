@@ -5,7 +5,7 @@ HOST: http://polls.apiblueprint.org/
 
 
 
-## Characters [/Characters/{?unlock}/{?character_code}]
+## Characters [/Characters/{?unlock_code}]
 
 ### List All Characters [GET]
 
@@ -63,7 +63,7 @@ HOST: http://polls.apiblueprint.org/
 
 + Response 200 (application/json)
 
-## Stats [/Characters/{Name}/{Stats}]
+## Stats [/Characters/{?character_Code}/{?skill}]
 
 ### Stats [POST]
 
@@ -71,7 +71,11 @@ HOST: http://polls.apiblueprint.org/
 + Request (application/json)
 
         {
-                "Question":"what stat do you want upgrade?",
+        
+               
+                "Character code":1,
+                "Skill Points":50,
+                 
                 "Life":200,
                 "Attack":25,
                 "Special Attack":50,
@@ -80,3 +84,14 @@ HOST: http://polls.apiblueprint.org/
         }
         
 + Response 200 (application/json)
+
+        [
+                "Skill Points":10,
+                "Character code":1,
+                "Life":200,
+                "Attack":65,
+                "Special Attack":50,
+                "Defense":20,
+                "Special Defense":50
+        
+        ]
