@@ -132,35 +132,51 @@ HOST: http://polls.apiblueprint.org/
 
 ### MatchResult [POST]
 
-+ Request (application/json)
-
-        {
-            "Player 1":"Win",
-            "Player 2":"lose"
-        }
-        
-+ Response 200 (application/json)
-
-### Scores [GET]
 
 + Request (application/json)
 
            {
-                "Scores ":
-                [
-                    "Score player 1":200,
+                "Players ":
+                [{
+                    "id":1,
+                    "Score player 1":200
+                    
+                    },
+                    {
+                    "id":2,
                     "Score player 2":100
-                ]
+                }]
             
            }
+        
++ Response 200 (application/json)
+
+        {
+             "Result":
+                [{
+                    "id":1,
+                    "player 1":"Win"
+                    },
+                    {
+                    "id":2,
+                    "player 2":"Lose" 
+                }]
+        
+        }
+### Scores [GET]
+
 
 + Response 200 (application/json)
 
         {
              "New Scores":
-                [
-                    "Score player 1":250,
+                [{
+                    "id":1,
+                    "Score player 1":250
+                    },
+                    {
+                    "id":2,
                     "Score player 2":50 
-                ]
+                }]
         
         }
