@@ -5,7 +5,7 @@ HOST: http://polls.apiblueprint.org/
 
 
 
-## Characters [/Characters]
+## Characters [/Characters/{?unlock}/{?character_code}]
 
 ### List All Characters [GET]
 
@@ -13,7 +13,8 @@ HOST: http://polls.apiblueprint.org/
 
         [
             {   
-            
+                "Character code":1,
+                "Point to unlock":250,
                 "Name":"Grougal",
                 "Type":"Fire Warrior",
                 "Life":200,
@@ -25,6 +26,8 @@ HOST: http://polls.apiblueprint.org/
             
             },
             {
+                "Character code":2,
+                "Point to unlock":250,
                 "Name":"Samantha",
                 "Type":"Grass archer",
                 "Life":200,
@@ -34,6 +37,8 @@ HOST: http://polls.apiblueprint.org/
                 "Special Defense":50
             },
             {
+                "Character code":3,
+                "Point to unlock":250,
                 "Name":"Nefarian",
                 "Type":"water Necromancer",
                 "Life":200,
@@ -45,7 +50,6 @@ HOST: http://polls.apiblueprint.org/
             
         ]
 
-## Unlock [/Characters/{Unlock}]
 
 ### Unlock [POST]
 
@@ -53,13 +57,8 @@ HOST: http://polls.apiblueprint.org/
 + Request (application/json)
 
         {
-            "question": "which one do you prefer?",
-            "choices": [
-                "Grougal",
-                "Samantha",
-                "Nefarian"
-                
-            
+            "Character code":1,
+            "player points":300
         }
 
 + Response 200 (application/json)
